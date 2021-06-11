@@ -23,7 +23,7 @@ app.get('/', (req, res) => {
 
 app.get('/telefonos', (req, res) => {
   const sql = 'SELECT * FROM telefonos';
-
+  
   connection.query(sql, (error, results) => {
     if (error) throw error;
     if (results.length > 0) {
@@ -33,6 +33,4 @@ app.get('/telefonos', (req, res) => {
     }
   });
 });
-
-
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
